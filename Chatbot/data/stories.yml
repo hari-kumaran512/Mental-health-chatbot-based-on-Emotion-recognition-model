@@ -1,0 +1,310 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_sad
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_sad
+  - action: utter_did_that_help
+  - intent: deny
+  - action: action_continue_emotional_support 
+
+- story: anger path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_angry
+    - action: utter_anger
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: anger path - user denies help
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_angry
+    - action: utter_anger
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: disgust path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_disgust
+    - action: utter_disgust
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: disgust path - user denies help
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_disgust
+    - action: utter_disgust
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: anxious path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_anxious
+    - action: utter_anxious
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: anxious path - user denies help
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_anxious
+    - action: utter_anxious
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: neutral path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_neutral
+    - action: utter_neutral
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: neutral path - user denies help
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_neutral
+    - action: utter_neutral
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: surprised path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_surprised
+    - action: utter_surprised
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: surprised path - user denies help
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_surprised
+    - action: utter_surprised
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support   
+
+- story: user asks about their emotion - affirm
+  steps:
+    - intent: ask_emotion
+    - action: action_detect_emotion
+    - action: action_respond_to_detected_emotion
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+    - action: utter_goodbye
+
+- story: user wants to know what bot sees - affirm
+  steps:
+    - intent: tell_me_what_you_see
+    - action: action_detect_emotion
+    - action: action_respond_to_detected_emotion
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+    - action: utter_goodbye
+
+- story: user asks about their emotion
+  steps:
+    - intent: ask_emotion
+    - action: action_detect_emotion
+    - action: action_respond_to_detected_emotion
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support
+
+- story: user wants to know what bot sees
+  steps:
+    - intent: tell_me_what_you_see
+    - action: action_detect_emotion
+    - action: action_respond_to_detected_emotion
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support
+
+# Direct path stories for all emotions (no condolence)
+
+- story: direct happy path
+  steps:
+    - intent: mood_great
+    - action: utter_happy
+
+- story: direct sad path
+  steps:
+    - intent: mood_unhappy
+    - action: utter_sad
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+
+- story: direct sad path with denial
+  steps:
+    - intent: mood_unhappy
+    - action: utter_sad
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: direct angry path
+  steps:
+    - intent: mood_angry
+    - action: utter_anger
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: direct angry path with denial
+  steps:
+    - intent: mood_angry
+    - action: utter_anger
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: direct disgust path
+  steps:
+    - intent: mood_disgust
+    - action: utter_disgust
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: direct disgust path with denial
+  steps:
+    - intent: mood_disgust
+    - action: utter_disgust
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: direct anxious path
+  steps:
+    - intent: mood_anxious
+    - action: utter_anxious
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: direct anxious path with denial
+  steps:
+    - intent: mood_anxious
+    - action: utter_anxious
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: direct neutral path
+  steps:
+    - intent: mood_neutral
+    - action: utter_neutral
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: direct neutral path with denial
+  steps:
+    - intent: mood_neutral
+    - action: utter_neutral
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+- story: direct surprised path
+  steps:
+    - intent: mood_surprised
+    - action: utter_surprised
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_goodbye
+
+- story: direct surprised path with denial
+  steps:
+    - intent: mood_surprised
+    - action: utter_surprised
+    - action: utter_did_that_help
+    - intent: deny
+    - action: action_continue_emotional_support 
+
+# Add these new stories
+
+# Denial loop - for continuing emotional support
+- story: emotional support loop
+  steps:
+    - action: action_continue_emotional_support
+    - intent: deny
+    - action: action_continue_emotional_support
+
+# Affirmation after loop - for successful resolution
+- story: affirmation after emotional support
+  steps:
+    - action: action_continue_emotional_support
+    - intent: affirm
+    - action: utter_happy
+    - action: utter_goodbye
+
+# Transition to new emotion during support
+- story: transition to new emotion
+  steps:
+    - action: action_continue_emotional_support
+    - or:
+      - intent: mood_great
+      - intent: mood_unhappy
+      - intent: mood_angry
+      - intent: mood_anxious
+      - intent: mood_disgust
+      - intent: mood_neutral
+      - intent: mood_surprised
+    - action: action_continue_emotional_support
+
+- story: jokes
+  steps:
+    - intent: prankster
+    - action: utter_jokes 
+
+

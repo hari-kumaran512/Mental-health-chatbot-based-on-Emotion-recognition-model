@@ -1,0 +1,155 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 15% 98%;
+    --foreground: 200 20% 20%;
+
+    --card: 180 15% 98%;
+    --card-foreground: 200 20% 20%;
+
+    --popover: 180 15% 98%;
+    --popover-foreground: 200 20% 20%;
+
+    --primary: 174 46% 51%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 43% 63%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 79% 68%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 174 46% 51%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 174 46% 51%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 25% 15%;
+    --foreground: 210 40% 98%;
+
+    --card: 200 25% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 200 25% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 174 46% 46%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 260 43% 58%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 210 73% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 174 46% 46%;
+
+    --sidebar-background: 200 25% 17%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 174 46% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 25% 20%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 200 25% 20%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/40 rounded-full hover:bg-primary/60 transition-colors;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/50 dark:bg-slate-900/50 border border-white/20 dark:border-slate-700/30 shadow-lg;
+  }
+  
+  .emotion-tag {
+    @apply px-3 py-1.5 rounded-full text-sm font-medium;
+  }
+
+  .emotion-tag.happy {
+    @apply bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300;
+  }
+  
+  .emotion-tag.sad {
+    @apply bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300;
+  }
+  
+  .emotion-tag.angry {
+    @apply bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300;
+  }
+  
+  .emotion-tag.neutral {
+    @apply bg-gray-100 text-gray-700 dark:bg-gray-800/50 dark:text-gray-300;
+  }
+  
+  .emotion-tag.surprised {
+    @apply bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300;
+  }
+  
+  .camera-container {
+    @apply relative rounded-2xl overflow-hidden shadow-xl;
+  }
+  
+  .chat-message {
+    @apply p-4 rounded-2xl max-w-[85%] mb-4;
+  }
+  
+  .chat-message.user {
+    @apply bg-primary/15 ml-auto;
+  }
+  
+  .chat-message.bot {
+    @apply bg-secondary/15 mr-auto;
+  }
+}

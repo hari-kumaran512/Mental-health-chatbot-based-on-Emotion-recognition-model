@@ -1,0 +1,200 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - mood_angry
+  - mood_neutral
+  - mood_surprised
+  - mood_disgust
+  - mood_anxious
+  - ask_emotion
+  - tell_me_what_you_see
+  - prankster
+  - bot_challenge
+
+slots:
+  detected_emotion:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+actions:
+  - action_detect_emotion
+  - action_respond_to_detected_emotion
+  - action_continue_emotional_support
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Happiness looks good on you! Keep shining!"
+  - text: "That’s wonderful! I hope your joy lasts all day!"
+  - text: "Amazing! Celebrating even the small joys in life makes a big difference!"
+  - text: "Happiness is contagious! Thanks for sharing your positive vibes!"
+  - text: "Smiles are the best! Keep spreading that positivity!"
+  - text: "You deserve this happiness! Let’s keep it going!"
+  - text: "Enjoy the moment! Maybe share your happiness with a friend or loved one?"
+  - text: "You deserve every bit of happiness! Enjoy the moment!"
+  - text: "I love seeing you happy! Keep embracing these good moments!"
+
+  utter_anger:
+  - text: "I understand. Want to vent about it?"
+  - text: "Anger is natural, but deep breaths can help."
+  - text: "I’m here to help you calm down.Take few deep breaths and try mediatating for a couple of minutes"
+  - text: "Maybe taking a short walk or listening to music could help?"
+  - text: "Taking a deep breath can help. Let’s try together… Inhale… Hold… Exhale…"
+  - text: "I know it’s tough. Maybe stepping away from the situation for a bit could help?"
+  - text: "You have every right to feel this way. Do you want to talk about it?"
+  - text: "I understand your frustration. Would a distraction help, like music or a walk?"
+  - text: "Sometimes, writing things down can help release anger. Want to try that?"
+  - text: "Anger can be overwhelming, but you're not alone. I'm here for you."
+  - text: "Maybe a few deep breaths or a short break could help ease the frustration?"
+  - text: "I know it’s not easy, but expressing your feelings can be helpful."
+  - text: "Would you like me to guide you through a short breathing exercise?"
+  - text: "Taking a moment to pause can help. Want to try a quick relaxation exercise?"
+  - text: "Let’s try a simple technique: Count to 10 slowly and take deep breaths."
+  - text: "Holding onto anger can be exhausting. Do you want to talk about what happened?"
+  - text: "You’re not alone in this. If it helps, I can suggest some stress-relief methods."
+  - text: "It’s okay to feel angry. A good way to release it is through physical activity."
+  - text: "Have you tried channeling your anger into something creative, like drawing or writing?"
+  - text: "You’re stronger than your anger. Let’s find a way to calm down together."
+  - text: "Would it help to talk about what’s making you feel this way?"
+  - text: "Sometimes, listening to music or stepping outside can help. Want to try it?"
+  - text: "I know it’s hard, but taking a few moments to breathe deeply can help."
+  - text: "Anger is temporary, but how we react to it matters. How can I help?"
+  - text: "A little movement might help! Maybe stretching or shaking it out?"
+  - text: "Have you tried expressing your anger through journaling or art?"
+  - text: "Would you like to do a short mindfulness exercise with me?"
+  - text: "It’s okay to step away and take a break when emotions run high."
+  - text: "I understand that this is frustrating. Would a different perspective help?"
+  - text: "You don’t have to deal with this alone. I’m here to listen."
+  - text: "When you’re ready, talking about it can help release the tension."
+  - text: "Taking a cold drink of water or splashing water on your face might help."
+
+  utter_anxious:
+  - text: "You got this! Try taking it one step at a time."
+  - text: "Breathe in, breathe out. Let’s figure this out together."
+  - text: "You’re stronger than you think! I believe in you!"
+  - text: "It's okay to feel this way. Have you tried deep breathing?"
+  - text: "I understand that you're feeling anxious. Maybe writing down your thoughts might help?"
+  - text: "You're not alone in this. Want to talk about what's on your mind?"
+  - text: "I know this feeling can be tough. Maybe taking a break and stretching a bit could help?"
+  - text: "You're doing your best, and that's enough. How about a short mindfulness exercise?"
+  - text: "Let’s take a deep breath together. Inhale... hold... and exhale. Feeling a little better?"
+  - text: "Sometimes shifting focus can help. Do you have a favorite hobby or relaxing music?"
+  - text: "Remember, you’ve handled tough moments before. This too shall pass."
+  - text: "Would it help if I shared some grounding techniques?"
+  - text: "Try naming five things around you. It helps to stay present."
+  - text: "You're stronger than your anxiety. "
+  - text: "A little self-care goes a long way. Maybe a warm drink or a cozy corner?"
+  - text: "Anxiety thrives on uncertainty. Maybe breaking things into small steps could help?"
+  - text: "Your feelings are valid. It's okay to take things slow."
+  - text: "One step at a time. You're doing better than you think!"
+  - text: "Would you like to talk it through, or just take a moment to breathe?"
+  - text: "You’re not alone. If it helps, I can share some stress management tips."
+  - text: "It's okay if today feels hard. Brighter days are ahead."
+  - text: "Try listening to calming music or going for a short walk. It might help."
+  - text: "It's okay to take a break. Maybe drinking some water or stretching could help."
+  - text: "If you’re feeling overwhelmed, writing things down might bring clarity."
+  - text: "Have you tried focusing on something positive today?"
+  - text: "Your thoughts don’t define you. You are capable and strong."
+  - text: "It's okay to take a moment to breathe. You deserve rest too."
+  - text: "Taking a small action can make a big difference. try going for a short walk?"
+  - text: "Your feelings are valid. You're doing your best, and that’s enough."
+  - text: "Try holding something cold, like an ice cube. It can help bring you to the present."
+
+  utter_sad:
+  - text: " It’s okay to feel sad. Suppressing emotions can make things worse."
+  - text: "Feeling sad is completely natural. Maybe journaling your thoughts could bring some clarity?"
+  - text: "I know this might be a rough time, but remember, sadness doesn’t define you. Want to take a short walk to clear your mind?"
+  - text: "Even the smallest steps forward count. Want to try writing down three things you’re grateful for today?"
+  - text: "Deep breathing can sometimes help ease heavy emotions. Would you like to try a simple breathing exercise?"
+  - text: "If you’re feeling low, a warm cup of tea and a cozy blanket might bring some comfort."
+  - text: "You deserve kindness—even from yourself. Please don’t be too hard on yourself."
+  - text: "If you need a distraction, maybe watching a lighthearted movie or show could lift your mood?"
+  - text: "Sadness doesn’t last forever, even if it feels that way now. Brighter days are ahead."
+  - text: "Have you tried a small, relaxing activity like drawing, writing, or listening to music? It might help."
+  - text: "Would fresh air help? Sometimes, just stepping outside can make a difference."
+  - text: "You’ve faced challenges before, and you’ve overcome them. I believe in you."
+  - text: "Have you had enough rest? Lack of sleep can sometimes amplify sadness."
+  - text: "If you need comfort, maybe a hug from a loved one or wrapping yourself in a blanket could help."
+
+  utter_disgust:
+  - text: "If something made you feel uncomfortable, it's okay to take a step back and process it."
+  - text: "Want to take a break and distract yourself with something more positive?"
+  - text: "It's okay to feel this way. Maybe stepping outside or getting some fresh air might help."
+  - text: "I know that feeling—it’s tough to shake off. Maybe grounding yourself in something familiar could help?"
+  - text: "Letting the feeling pass without forcing it away can sometimes be the best approach. Just be kind to yourself."
+  - text: "You don’t have to dwell on this if it’s uncomfortable. Let’s shift to something more pleasant."
+
+  utter_neutral:
+  - text: "Sometimes a neutral state is a good place to be - balanced and steady."
+  - text: "A neutral mood can be a great foundation for the day ahead."
+  - text: "It sounds like you're in a balanced state of mind. That can be quite peaceful."
+  - text: "Being neutral is like having a clean slate - ready for whatever comes next."
+  - text: "A calm, neutral state is actually quite valuable in our often chaotic world."
+  - text: "Feeling neutral is perfectly fine. Not every day needs to be emotional."
+  - text: "Emotional balance is something many people strive for. Sounds like you're there today."
+  - text: "Neutral can be a nice break from emotional highs and lows."
+  - text: "That's fine. Sometimes just being okay is enough."
+  - text: "A steady emotional state can help with clear thinking and decision making."
+
+  utter_surprised:
+  - text: "Oh! Surprises can certainly shake things up!"
+  - text: "Life is full of unexpected moments, isn't it?"
+  - text: "Sometimes the things we don't expect make the biggest impact."
+  - text: "I hope it was a good surprise!"
+  - text: "Surprise can be quite an energizing feeling."
+  - text: "Unexpected events keep life interesting, don't they?"
+  - text: "Those moments of surprise can really put life in perspective."
+  - text: "Surprises can be a great reminder that we can't predict everything."
+  - text: "That look of surprise on your face says it all!"
+  - text: "Surprised moments can be quite memorable, can't they?"
+
+  utter_joke:
+    - text: "Here is a joke: I told my friend 10 jokes to make him laugh. Sadly, no pun in ten did."
+    - text: "Here is a joke: I’m reading a book on anti-gravity. It’s impossible to put down... literally!"
+    - text: "Here is a joke: What do you call fake spaghetti? An impasta!"
+    - text: "Here is a joke: Why was the math book sad? It had too many problems."
+    - text: "Here is a joke: I tried to start a band called '1023MB'... but we haven’t got a gig yet."
+    - text: "Here is a joke: I made a pun about the wind... but it blew over."
+    - text: "Here is a joke: Why can’t you trust an atom? Because they make up everything!"
+    - text: "Here is a joke: I used to be a baker, but I couldn’t make enough dough."
+    - text: "Here is a joke: Why don’t skeletons fight each other? They don’t have the guts!"
+    - text: "Here is a joke: I told my computer I needed a break, and now it’s sending me KitKat ads."
+    - text: "Here is a joke: I tried to organize a space party, but it was a total disaster. Good guests are hard to find!"
+    - text: "Here is a joke: What do you call a fish with no eyes? Fsh."
+    - text: "Here is a joke: How does a scientist freshen their breath? With experi-mints."
+    - text: "Here is a joke: I walked into a store to buy some camo pants, but I couldn’t find any."
+    - text: "Here is a joke: Why don’t programmers like nature? It has too many bugs."
+    - text: "Here is a joke: What did the ocean say to the beach? Nothing, it just waved."
+    - text: "Here is a joke: I made a pun about the wind... but it blew over." 
+    - text: "Here is a joke: I couldn’t figure out how to put my seatbelt on... then it clicked!"
+    - text: "Here is a joke: What’s a skeleton’s least favorite room? The living room!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_condolence:
+  - text: "Sorry that you are feeling that way"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,248 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - what's up
+
+- intent: mood_angry
+  examples: |
+    - i am angry
+    - pissed off
+    - smoldering
+    - annoyed
+    - frustated
+    - upset
+    - mad
+    - fuming
+    - mad
+    - Everything is making me mad today
+    - This is so frustrating
+    - Why does everything have to be so hard
+    - I just feel like punching something
+    - I can't believe this happened
+    - I’m extremely annoyed
+    - This is so unfair
+    - People keep testing my patience
+
+- intent: mood_neutral
+  examples: |
+    - I feel normal
+    - I'm feeling neutral
+    - I don't feel anything in particular
+    - I'm just feeling okay
+    - Not great, not bad
+    - I'm feeling indifferent
+    - I'm feeling neither happy nor sad
+    - I'm just in a neutral mood
+    - I feel content but not excited
+    - I'm feeling balanced
+    - Just an ordinary day
+    - Nothing special to report
+    - I feel calm
+    - I'm feeling steady
+    - My emotions are stable today
+
+- intent: mood_surprised
+  examples: |
+    - I'm shocked
+    - I can't believe it
+    - Wow!
+    - I'm so surprised
+    - That was unexpected
+    - I'm startled
+    - I didn't see that coming
+    - I'm amazed
+    - I'm astonished
+    - I'm completely taken aback
+    - That caught me off guard
+    - I'm speechless
+    - I didn't expect that at all
+    - My jaw just dropped
+    - I'm in disbelief
+    - This is such a surprise
+
+- intent: mood_disgust
+  examples: |
+    - yuck
+    - eww
+    - puke
+    - gross
+    - horrible
+    - nasty
+    - That was absolutely disgusting
+    - I feel so grossed out right now
+    - That was the most horrible thing
+    - This makes me feel sick
+    - I feel so uncomfortable just thinking about it
+    - That was beyond nasty
+    - I want to unsee that
+
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - I'm full of joy right now
+    - I can't stop smiling
+    - This is the best day ever
+    - I feel so blessed
+    - I’m absolutely thrilled
+    - I love my life
+    - Nothing can bring me down today
+    - I am in such a positive mood
+    - Pure bliss
+    - happy
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - I'm feeling really down today
+    - I feel so lonely
+    - Everything is going wrong
+    - I'm not okay
+    - depressed
+    - depression
+    - I feel depressed
+    - I'm just feeling empty inside
+    - I'm feeling really low
+    - I just want to be alone
+    - Today is just a bad day
+    - I feel heartbroken
+    - I wish I could disappear
+    - I just feel stuck
+    - Everything is just too much for me
+    - I'm feeling hopeless
+    - I just don’t feel like myself
+
+- intent: mood_anxious
+  examples: |
+    - I'm so nervous about this
+    - I have too much to do, and I’m freaking out
+    - My thoughts won’t stop racing
+    - I feel so overwhelmed
+    - I don't know how to handle this stress
+    - What if things go wrong
+    - I feel like I’m drowning in worries
+    - I can’t relax at all
+    - I feel like the world is spinning
+    - I feel unworthy
+    - i feel useless
+    - i feel stressed
+    - i am overwhelmed
+    - i feel suffocated
+    - i'm anxious
+    - i'm afraid
+    - afraid
+    - stress
+    - stressed
+    - overwhelmed
+    - fear
+    - anxious
+    - anxiety
+    - trapped
+    
+- intent: ask_emotion
+  examples: |
+    - how do I look
+    - what emotion am I showing
+    - can you tell how I feel
+    - do I look happy
+    - am I sad
+    - can you see my emotion
+    - tell me my emotion
+    - what's my facial expression
+
+- intent: tell_me_what_you_see
+  examples: |
+    - what can you see on my face
+    - tell me what emotion you detect
+    - can you read my expression
+    - analyze my face
+    - what am I expressing right now
+    - check my emotion
+
+- intent: prankster
+  examples: |
+    - Tell me a Joke
+    - Entertain me
+    - Suprise me
+    - Bring out the fun guns
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
